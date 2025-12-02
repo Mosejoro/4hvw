@@ -9,7 +9,7 @@ const inventionsData = {
         category: "Optics",
         description:
           "The first practical telescope, revolutionizing astronomy and our understanding of the cosmos. This invention opened humanity's eyes to the vast universe beyond Earth.",
-        image: "/AI/antique-telescope-brass-vintage.jpg",
+        image: "public/AI/antique-telescope-brass-vintage.jpg",
       },
     ],
   },
@@ -22,7 +22,7 @@ const inventionsData = {
         category: "Transportation",
         description:
           "The first navigable submarine, tested in the Thames River. This wooden vessel covered in leather could carry 16 rowers and remain submerged for hours.",
-        image: "/AI/early-submarine-vessel-nautical.jpg",
+        image: "public/AI/early-submarine-vessel-nautical.jpg",
       },
     ],
   },
@@ -35,7 +35,7 @@ const inventionsData = {
         category: "Computing",
         description:
           "The Pascaline, a mechanical calculator capable of addition and subtraction. It laid the groundwork for all future computing machines.",
-        image: "/AI/pascaline-mechanical-calculator-antique.jpg",
+        image: "public/AI/pascaline-mechanical-calculator-antique.jpg",
       },
     ],
   },
@@ -48,7 +48,7 @@ const inventionsData = {
         category: "Timekeeping",
         description:
           "The first precision timekeeper, increasing clock accuracy from 15 minutes per day to just 15 seconds. It transformed navigation and scientific measurement.",
-        image: "/AI/pendulum-clock-vintage-brass-antique.jpg",
+        image: "public/AI/pendulum-clock-vintage-brass-antique.jpg",
       },
     ],
   },
@@ -61,7 +61,7 @@ const inventionsData = {
         category: "Engineering",
         description:
           "The first commercially used steam-powered device, initially designed to pump water from mines. This invention sparked the Industrial Revolution.",
-        image: "/AI/early-steam-engine-industrial-vintage.jpg",
+        image: "public/AI/early-steam-engine-industrial-vintage.jpg",
       },
     ],
   },
@@ -74,7 +74,7 @@ const inventionsData = {
         category: "Engineering",
         description:
           "An improved steam engine that became the workhorse of the mining industry, capable of pumping water from depths previously impossible to reach.",
-        image: "/AI/newcomen-engine-steam-industrial.jpg",
+        image: "public/AI/newcomen-engine-steam-industrial.jpg",
       },
     ],
   },
@@ -87,7 +87,7 @@ const inventionsData = {
         category: "Electrical",
         description:
           "A device that protects structures from lightning strikes by providing a path for electrical discharge. Franklin's famous kite experiment proved the electrical nature of lightning.",
-        image: "/AI/lightning-rod-vintage-colonial-building.jpg",
+        image: "public/AI/lightning-rod-vintage-colonial-building.jpg",
       },
     ],
   },
@@ -100,7 +100,7 @@ const inventionsData = {
         category: "Engineering",
         description:
           "Watt's separate condenser dramatically improved steam engine efficiency, making it practical for factories and transportation. This truly ignited the Industrial Revolution.",
-        image: "/AI/james-watt-steam-engine.jpg",
+        image: "public/AI/james-watt-steam-engine.jpg",
       },
     ],
   },
@@ -113,7 +113,7 @@ const inventionsData = {
         category: "Aviation",
         description:
           "The first successful human flight, carrying passengers above Paris. This achievement fulfilled humanity's ancient dream of flying through the skies.",
-        image: "/AI/montgolfier-balloon.jpg",
+        image: "public/AI/montgolfier-balloon.jpg",
       },
     ],
   },
@@ -126,7 +126,7 @@ const inventionsData = {
         category: "Medicine",
         description:
           "The world's first vaccine, developed using cowpox to immunize against deadly smallpox. This discovery saved countless millions of lives and pioneered modern immunology.",
-        image: "/AI/smallpox-vaccine-vial.jpg",
+        image: "public/AI/smallpox-vaccine-vial.jpg",
       },
     ],
   },
@@ -139,7 +139,7 @@ const inventionsData = {
         category: "Transportation",
         description:
           "The first full-scale working railway steam locomotive, forever changing how humanity moved goods and people across vast distances.",
-        image: "/AI/steam-locomotive.jpg",
+        image: "public/AI/steam-locomotive.jpg",
       },
     ],
   },
@@ -152,7 +152,7 @@ const inventionsData = {
         category: "Imaging",
         description:
           "The first permanent photograph, 'View from the Window at Le Gras,' captured after an 8-hour exposure. This invention would transform art, science, and memory itself.",
-        image: "/AI/photography-camera.jpg",
+        image: "public/AI/photography-camera.jpg",
       },
     ],
   },
@@ -165,7 +165,7 @@ const inventionsData = {
         category: "Communication",
         description:
           "The electrical telegraph and Morse code enabled near-instantaneous communication across continents, shrinking the world and revolutionizing commerce and news.",
-        image: "/AI/morse-telegraph.jpg",
+        image: "public/AI/morse-telegraph.jpg",
       },
     ],
   },
@@ -178,7 +178,7 @@ const inventionsData = {
         category: "Medicine",
         description:
           "The first public demonstration of surgical anesthesia using ether. This breakthrough transformed surgery from torture into precise medical science.",
-        image: "/AI/anesthesia-equipment.jpg",
+        image: "public/AI/anesthesia-equipment.jpg",
       },
     ],
   },
@@ -191,7 +191,7 @@ const inventionsData = {
         category: "Communication",
         description:
           "The device that connected human voices across distances. Bell's famous first words: 'Mr. Watson, come here, I want to see you.'",
-        image: "/AI/bell-telephone.jpg",
+        image: "public/AI/bell-telephone.jpg",
       },
       {
         name: "Internal Combustion Engine",
@@ -199,7 +199,7 @@ const inventionsData = {
         category: "Engineering",
         description:
           "The four-stroke engine that would power the automobile revolution and reshape cities, economies, and daily life worldwide.",
-        image: "/AI/otto-engine.jpg",
+        image: "public/AI/otto-engine.jpg",
       },
     ],
   },
@@ -212,7 +212,7 @@ const inventionsData = {
         category: "Electrical",
         description:
           "After thousands of experiments, Edison created a long-lasting incandescent bulb. Electric light extended productive hours and transformed human society.",
-        image: "/AI/edison-lightbulb.jpg",
+        image: "public/AI/edison-lightbulb.jpg",
       },
     ],
   },
@@ -225,7 +225,7 @@ const inventionsData = {
         category: "Transportation",
         description:
           "The Benz Patent-Motorwagen, the first true automobile powered by an internal combustion engine. It would reshape the modern world entirely.",
-        image: "/AI/benz-automobile.jpg",
+        image: "public/AI/benz-automobile.jpg",
       },
     ],
   },
@@ -238,7 +238,7 @@ const inventionsData = {
         category: "Medicine",
         description:
           "The discovery of X-rays allowed doctors to see inside the human body without surgery. Röntgen's first image was of his wife's hand, showing her bones and wedding ring.",
-        image: "/AI/xray-image.jpg",
+        image: "public/AI/xray-image.jpg",
       },
       {
         name: "Cinema",
@@ -246,7 +246,7 @@ const inventionsData = {
         category: "Entertainment",
         description:
           "The Cinématographe brought moving pictures to audiences worldwide, creating an entirely new art form and entertainment industry.",
-        image: "/AI/lumiere-cinema.jpg",
+        image: "public/AI/lumiere-cinema.jpg",
       },
     ],
   },
@@ -259,7 +259,7 @@ const inventionsData = {
         category: "Aviation",
         description:
           "Twelve seconds that changed the world. At Kitty Hawk, Orville Wright achieved the first controlled, powered airplane flight, fulfilling humanity's oldest dream.",
-        image: "/AI/wright-flyer.jpg",
+        image: "public/AI/wright-flyer.jpg",
       },
     ],
   },
@@ -272,7 +272,7 @@ const inventionsData = {
         category: "Medicine",
         description:
           "The accidental discovery of the first antibiotic. Fleming noticed mold killing bacteria in a petri dish, leading to medicines that would save hundreds of millions of lives.",
-        image: "/AI/penicillin-mold.jpg",
+        image: "public/AI/penicillin-mold.jpg",
       },
     ],
   },
@@ -285,7 +285,7 @@ const inventionsData = {
         category: "Electronics",
         description:
           "The tiny switch that would enable the digital revolution. Transistors replaced vacuum tubes, making modern computers, phones, and electronics possible.",
-        image: "/AI/transistor.jpg",
+        image: "public/AI/transistor.jpg",
       },
     ],
   },
@@ -298,7 +298,7 @@ const inventionsData = {
         category: "Space",
         description:
           "The first artificial satellite launched into Earth's orbit. Its radio beeps from space announced a new era of human achievement and ignited the Space Race.",
-        image: "/AI/sputnik-satellite.jpg",
+        image: "public/AI/sputnik-satellite.jpg",
       },
     ],
   },
@@ -311,7 +311,7 @@ const inventionsData = {
         category: "Computing",
         description:
           "The precursor to the Internet, connecting computers at four universities. This network would evolve to connect billions of people worldwide.",
-        image: "/AI/arpanet-computer.jpg",
+        image: "public/AI/arpanet-computer.jpg",
       },
     ],
   },
@@ -324,7 +324,7 @@ const inventionsData = {
         category: "Computing",
         description:
           "The Intel 4004, the first commercial microprocessor, placed an entire CPU on a single chip. It launched the personal computer revolution.",
-        image: "/AI/intel-microprocessor.jpg",
+        image: "public/AI/intel-microprocessor.jpg",
       },
     ],
   },
@@ -337,7 +337,7 @@ const inventionsData = {
         category: "Computing",
         description:
           "The communication protocol that unified computer networks into the Internet. January 1, 1983 is considered the Internet's official birthday.",
-        image: "/AI/tcp-ip-network.jpg",
+        image: "public/AI/tcp-ip-network.jpg",
       },
     ],
   },
@@ -350,7 +350,7 @@ const inventionsData = {
         category: "Computing",
         description:
           "HTML, URLs, and HTTP—the foundation of the web. Berners-Lee made his invention freely available, enabling the information revolution that transformed society.",
-        image: "/AI/world-wide-web.jpg",
+        image: "public/AI/world-wide-web.jpg",
       },
     ],
   },
@@ -363,7 +363,7 @@ const inventionsData = {
         category: "Consumer Electronics",
         description:
           "The smartphone that redefined mobile computing. Combining phone, iPod, and internet device, it put a powerful computer in everyone's pocket.",
-        image: "/AI/iphone-smartphone.jpg",
+        image: "public/AI/iphone-smartphone.jpg",
       },
     ],
   },
@@ -376,7 +376,7 @@ const inventionsData = {
         category: "Artificial Intelligence",
         description:
           "AlexNet's victory in ImageNet demonstrated deep learning's power, sparking the AI revolution that would transform every industry.",
-        image: "/AI/deep-learning-neural.jpg",
+        image: "public/AI/deep-learning-neural.jpg",
       },
     ],
   },
@@ -389,7 +389,7 @@ const inventionsData = {
         category: "Artificial Intelligence",
         description:
           "AI systems capable of human-like text generation and reasoning. ChatGPT brought AI into daily life, marking a new chapter in human-machine collaboration.",
-        image: "/AI/large-language-model.jpg",
+        image: "public/AI/large-language-model.jpg",
       },
     ],
   },
