@@ -61,7 +61,7 @@ const inventionsData = {
         category: "Engineering",
         description:
           "The first commercially used steam-powered device, initially designed to pump water from mines. This invention sparked the Industrial Revolution.",
-        image: "image/AI/early-steam-engine-industrial-vintage.jpg",
+        image: "image/early-steam-engine-industrial-vintage.jpg",
       },
     ],
   },
@@ -87,7 +87,7 @@ const inventionsData = {
         category: "Electrical",
         description:
           "A device that protects structures from lightning strikes by providing a path for electrical discharge. Franklin's famous kite experiment proved the electrical nature of lightning.",
-        image: "image/AI/lightning-rod-vintage-colonial-building.jpg",
+        image: "image/lightning-rod-vintage-colonial-building.jpg",
       },
     ],
   },
