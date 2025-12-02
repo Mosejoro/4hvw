@@ -1,0 +1,538 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #161616;
+  --text-primary: #f5f0e8;
+  --text-secondary: #8a8578;
+  --text-muted: #4a4740;
+  --accent: #c9a66b;
+  --accent-dim: rgba(201, 166, 107, 0.1);
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* ========== INTRO SCREEN ========== */
+.intro {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  z-index: 100;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.intro.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.1);
+}
+
+.intro-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.intro-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.intro-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.intro-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-style: italic;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scroll-indicator span {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    height: 40px;
+  }
+  50% {
+    opacity: 1;
+    height: 60px;
+  }
+}
+
+/* ========== TIMELINE CONTAINER ========== */
+.timeline-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.8s ease 0.3s;
+}
+
+.timeline-container.visible {
+  opacity: 1;
+}
+
+.timeline-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ========== YEAR ITEMS ========== */
+.year-item {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  text-align: center;
+}
+
+.year-number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.year-item:hover .year-number {
+  color: var(--text-secondary);
+}
+
+.year-item.active .year-number {
+  font-size: clamp(4rem, 12vw, 8rem);
+  color: var(--text-primary);
+}
+
+.year-item.active::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--accent-dim) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.year-preview {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+}
+
+.year-item.active .year-preview {
+  opacity: 1;
+}
+
+.invention-count {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.year-item.active .invention-count {
+  opacity: 1;
+}
+
+/* ========== NAVIGATION HINTS ========== */
+.nav-hint {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.nav-hint.top {
+  top: 2rem;
+}
+
+.nav-hint.bottom {
+  bottom: 2rem;
+}
+
+.nav-hint:hover {
+  opacity: 1;
+}
+
+/* ========== ERA INDICATOR ========== */
+.era-indicator {
+  position: fixed;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+}
+
+.era-text {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ========== PROGRESS BAR ========== */
+.progress-container {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-bar {
+  width: 2px;
+  height: 100%;
+  background: var(--bg-card);
+  position: relative;
+  border-radius: 1px;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--progress, 0%);
+  background: var(--accent);
+  border-radius: 1px;
+  transition: height 0.3s ease;
+}
+
+.progress-years {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: absolute;
+  right: 1rem;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ========== DETAIL VIEW ========== */
+.detail-view {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  overflow-y: auto;
+}
+
+.detail-view.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.close-btn {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  border: 1px solid var(--text-muted);
+  color: var(--text-primary);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 60;
+}
+
+.close-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+.detail-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+}
+
+.detail-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.detail-year {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 15vw, 12rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.detail-era {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.inventions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.invention-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.invention-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.invention-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.invention-image {
+  width: 100%;
+  height: 180px;
+  background: var(--bg-secondary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.invention-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.invention-card:hover .invention-image img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.invention-category {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.invention-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.invention-creator {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.invention-description {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .era-indicator {
+    display: none;
+  }
+
+  .progress-container {
+    right: 1rem;
+    height: 150px;
+  }
+
+  .nav-hint {
+    font-size: 0.6rem;
+  }
+
+  .close-btn {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .close-text {
+    display: none;
+  }
+
+  .detail-content {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .inventions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .invention-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ========== CLICK ANIMATION ========== */
+.year-item.clicking {
+  animation: clickPulse 0.3s ease;
+}
+
+@keyframes clickPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Transition overlay */
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 45;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.transition-overlay.active {
+  opacity: 1;
+}
